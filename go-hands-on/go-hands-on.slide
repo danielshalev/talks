@@ -1,0 +1,63 @@
+GO Hands-On
+MyHeritage Backend team
+12 Nov 2017
+Tags: go
+
+Daniel Shalev
+Software Developer
+daniel.shalev@myheritage.com
+
+* Goal
+- Write some go code
+.image ide.png
+
+* Environment Setup
+- install Go
+	brew update
+	brew install golang
+- set env vars
+	export GOPATH=$HOME/go
+	export GOROOT=/usr/local/opt/go/libexec
+- Create the workspace directories tree:
+	mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
+- all ready
+	$GOPATH/src : Where your Go projects / programs are located
+	$GOPATH/pkg : contains every package objects
+	$GOPATH/bin : The compiled binaries home
+
+* Environment Setup - Hello world
+- test your env by runing a simple hello world
+	vi GOPATH/src/hello.go
+
+.play hw.go
+
+	go run hello.go
+
+* Environment Setup - Hello web
+- test your env by runing a simple web service
+	vi GOPATH/src/helloWeb.go
+
+.play hw2.go
+
+	go run helloWeb.go
+
+* The made up system
+
+- Bird monitoring system
+- Some birds have tags on their legs
+- We have devices that report when a tag passed by them
+- Our task is to create the backend for this made up system
+- Solution will be implemented with services that communicate via rest or kafka
+- How deep you go in a solution is up to you
+
+* backend services
+
+- Endpoint for monitoring devices to send events
+- Saving events to DB (MySql? other time series DB?)
+- Birds statistics service (the time it took for a bird to move from place a to b, etc...)
+- Mock the actual monitor events
+- Bird last seen service
+- Your ideas...
+
+* Backend services
+.image arc.png

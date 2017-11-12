@@ -1,0 +1,208 @@
+GO Workshop
+MyHeritage Backend team
+12 Nov 2017
+Tags: go
+
+Daniel Shalev
+Software Developer
+daniel.shalev@myheritage.com
+
+* About this presentation
+
+- The point is to give you a "taste" of Go
+- I'm *not* a Go expert
+.image intro.png
+
+* Go
+
+- Developed at Google (Robert Griesemer, Rob Pike and Ken Thompson)
+- Open sourced November 2009
+- Version 1 March 2012 (currently at 1.9)
+- Used by Google (dl.google.com), Docker, Dropbox, Facebook, Netflix ...
+.image intro2.png
+	
+* Why Go?
+
+- Easy to learn
+- Easy concurrency
+- Small, simple language
+- Static yet feels dynamic
+- Tooling
+- Fast compilation, static executable
+- Production grade HTTP server (HTTPS, HTTP 2.0)
+- GC
+- Linux, OSX, Windows
+- Great Community
+
+* IDE
+
+- IntelliJ gogland
+- Atom
+- Visual Studio
+- sublime, vim by plugins
+.image ide.png
+
+* Setup
+
+install via homebrew
+
+ brew install go
+exports	
+
+ export GOROOT=/usr/local/opt/go/libexec
+ export GOPATH=$HOME/.go
+.image setup.png
+
+* Hello World
+.play -edit hw.go
+.image hw.png
+
+* Hello Web
+.play -edit hw2.go
+
+* Go And Java - Things In Common
+
+- C-Syntax
+- Statically typed
+- Garbage collected
+- Interfaces
+- Reflaction
+
+* Go and Java - Differences
+
+- Machine code vs byte code
+- Static linking vs dynamic linking
+- Pointers
+- Concurrency model is part of Go
+- Default packages for web, testing, JSON, and more
+
+* Go and Java - Differences cont...
+
+- Structs instead of classes
+- Factory methods instead of constructors
+- No built in inheritance
+- No exceptions
+- No generics
+
+* Main Function
+- Go programs starts at the main function in the main package
+- Package convention - one lowercase word
+.code -edit mainFunc.go
+
+* Output
+- fmt is a core package (means "format")
+.play -edit hw.go
+
+* Variables
+.play -edit vars.go
+
+* Type Inference
+.play -edit vars2.go
+
+* Defining Variables cont...
+.play -edit vars3.go
+
+* Functions
+.code -edit function.go
+
+* Functions - Arguments
+.code -edit function2.go
+
+* Functions - Return Values
+.code -edit function3.go
+
+* Functions - Multiple Return Values
+.code -edit function4.go
+
+* Functions - Error Handling
+.code -edit function5.go
+
+* Functions - Example
+.play -edit function6.go
+
+* Structs
+.play -edit structs.go
+
+* Structs Property Access
+- Public properties are Uppercase - accessible to anything
+.image access.png
+- Private properties are lowercase - only accessible via methods
+.image access2.png
+
+* Structs - Methods
+.play -edit structs2.go
+
+* Loops
+.code -edit loops.go
+
+* Arrays And Slices
+
+- Go arrays are much like java arrays
+- Defined for a specific type, constant size
+- Slices are much like java's ArrayList
+- We can add/remove values dynamically
+- A slice is a view on an array
+
+* Arrays And Slices
+
+- Slice data structure contains:
+	name
+	pointer to an array
+	array object type
+	offset
+	slice length
+.play -edit arrays.go /START/,/END/
+
+
+* Concurrency - Goroutines
+- Lightweight threads of execution (2k initial stack vs 1MB)
+- Executed concurrently
+- Runtime will multiplex to threads/cores
+- Expandable stack
+- Shared memory
+
+* Goroutines - How
+- Run a function as a goroutine using the *go* keyword
+- Go will queue the task an continue to the next line
+.code goroutines.go
+
+* Goroutines - Example
+.play -edit goroutines1.go /START_GR/,/END_GR/
+
+* Channels
+Go routines communicate via channels
+
+- Think of channels as one-way pipes
+- Operations
+ 1. Push to channel
+ 2. Listen to channel
+- Channels have types
+- Use channels to share state
+- Use channels to control flow
+
+"Don't communicate by sharing memory; share memory by communicating."
+
+* Channels - Pushing to channels
+.code channels.go
+
+* Channels - Listening to channels
+.code channels2.go
+
+* Channels - Example
+.play -edit channels1.go /START/,/END/
+
+* Directories Structure
+
+Go expects a specific directories structure in the dev environment
+
+- There should be 2 environment variables:
+ 1. GOROOT - points to the GO SDK directory
+ 2. GOPATH - points to the directories with the go code
+
+- Under GOPATH there should be 3 directories:
+ src - this is were you place your code
+ pkg - package objects that describes the compiled code
+ bin - compiled binaries
+
+* Q&A
+.image gophers-qa.png
